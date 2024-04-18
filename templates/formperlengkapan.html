@@ -1,0 +1,58 @@
+{% include 'header.html' %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Data Perlengkapan</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item active"><a href="/masterperlengkapan">Data</a></li>
+            <li class="breadcrumb-item"><a href="/formperlengkapan">Masukan</a></li>
+            <li class="breadcrumb-item active"><a href="/hapusperlengkapan">Hapus</a></li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  
+<!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+            <form method="POST" action="{{ url_for('simpan_perlengkapan') }}">
+                <div class="form-group">
+                    <label for="Tanggal">Tanggal</label>
+                    <input type="date" class="form-control" id="Tanggal" name="Tanggal" required>
+                </div>
+                <div class="form-group">
+                    <label for="Nama_Barang">Nama Barang</label>
+                    <input type="text" class="form-control" id="Nama_Barang" name="Nama_Barang" required>
+                </div>
+                <div class="form-group">
+                    <label for="Satuan">Satuan</label>
+                    <input type="text" class="form-control" id="Satuan" name="Satuan" required>
+                </div>
+                <div class="form-group">
+                    <label for="Jumlah_Awal">Jumlah Awal</label>
+                    <input type="number" class="form-control" id="Jumlah_Awal" name="Jumlah_Awal" required>
+                </div>
+                <div class="form-group">
+                    <label for="Barang_Masuk">Barang Masuk</label>
+                    <input type="number" class="form-control" id="Barang_Masuk" name="Barang_Masuk" required>
+                </div>
+                <div class="form-group">
+                    <label for="Barang_Keluar">Barang Keluar</label>
+                    <input type="number" class="form-control" id="Barang_Keluar" name="Barang_Keluar" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  {% include 'footer.html' %}

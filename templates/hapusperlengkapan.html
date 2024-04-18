@@ -1,0 +1,51 @@
+{% include 'header.html' %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Hapus Data Perlengkapan</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                      <li class="breadcrumb-item active"><a href="/masterperlengkapan">Data</a></li>
+                      <li class="breadcrumb-item"><a href="/formperlengkapan">Masukan</a></li>
+                      <li class="breadcrumb-item active"><a href="/hapusperlengkapan">Hapus</a></li>
+                    </ol>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form role="form" action="{{ url_for('hapusperlengkapan') }}" method="POST">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="Tanggal">Tanggal</label>
+                                        <input type="date" class="form-control" id="Tanggal" name="Tanggal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Nama_Barang">Nama Barang</label>
+                                        <input type="text" class="form-control" id="Nama_Barang" name="Nama_Barang" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Hapus Data</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% include 'footer.html' %}

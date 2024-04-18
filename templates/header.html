@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aplikasi Khazzanah x Sahla Syari</title>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fontawesome-free/css/all.min.css') }}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/jqvmap/jqvmap.min.css') }}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/adminlte.min.css') }}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/daterangepicker/daterangepicker.css') }}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/summernote/summernote-bs4.min.css') }}">
+<style>
+ 
+</style>
+  </head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="static/dist/img/logo.jpeg" alt="Khazzanah x Sahla Syari" height="100" width="100">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/dashboard" class="nav-link">Home</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout" role="button">
+          Logout
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <span class="brand-text font-weight-light">Khazzanah x Sahla Syari</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="static/dist/img/user.png" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Administrator</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+          
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item {% if menu=='stock', 'master' %} menu-close {% endif %}">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-database"></i>
+              <p>
+                Master Data
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/masterperlengkapan" class="nav-link {% if submenu=='perlengkapan'%} active {% endif %}">
+                  <i class="fas fa-toolbox nav-icon"></i>
+                  <p>Data Perlengkapan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/mastersupplier" class="nav-link {% if submenu=='supplier'%} active {% endif %}">
+                  <i class="fas fa-user-friends nav-icon"></i>
+                  <p>Data Supplier</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/masterpengiriman" class="nav-link {% if submenu=='pengiriman'%} active {% endif %}">
+                  <i class="fas fa-shipping-fast nav-icon"></i>
+                  <p>Data Pengiriman</p>
+                </a>
+              </li>
+              </a>
+            </ul>
+          </li>
+         
+
+          <li class="nav-item {% if menu=='produksi'%} menu-close {% endif %}">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tshirt"></i>
+              <p>
+                Produksi 
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/produksikhazzanah" class="nav-link {% if menu=='produksikhazzanah'%} active {% endif %}">
+                  <i class="fa fa-tag nav-icon"></i>
+                  <p>Produksi Khazzanah</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/produksisahla" class="nav-link {% if menu=='produksisahla'%} active {% endif %}">
+                  <i class="fa fa-tags nav-icon"></i>
+                  <p>Produksi Sahla</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item {% if menu=='po'%} menu-close {% endif %}">
+            <a href="#" class="nav-link">
+              <i class="nav-icon 	fa fa-shopping-cart"></i>
+              <p>
+                Pesanan Masuk
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/pokhazzanah" class="nav-link {% if submenu=='pokhazzanah'%} active {% endif %}">
+                  <i class="fa fa-cart-arrow-down nav-icon"></i>
+                  <p>PO Khazzanah</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/posahla" class="nav-link {% if submenu=='posahla'%} active {% endif %}">
+                  <i class="fa fa-cart-arrow-down nav-icon"></i>
+                  <p>PO Sahla</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item {% if menu=='penjualan'%} menu-close {% endif %}">
+            <a href="#" class="nav-link">
+              <i class="nav-icon 	fas fa-money-bill-wave-alt"></i>
+              <p>
+                Transaksi Penjualan
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/penjualankhazzanah" class="nav-link {% if menu=='penjualankhazzanah'%} active {% endif %}">
+                  <i class="fas fa-shopping-bag nav-icon"></i>
+                  <p>Penjualan Khazzanah</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/penjualansahla" class="nav-link {% if menu=='penjualansahla'%} active {% endif %}">
+                  <i class="fas fa-shopping-basket nav-icon"></i>
+                  <p>Penjualan Sahla</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+      <li>
+        <a>
+          <i></i>
+          <p></p>
+        </a>
+      </li>
+      
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+

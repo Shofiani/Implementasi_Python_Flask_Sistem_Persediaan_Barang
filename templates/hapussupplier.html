@@ -1,0 +1,58 @@
+{% include 'header.html' %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Hapus Data Supplier</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                      <li class="breadcrumb-item active"><a href="/produksikhazzanah">Data</a></li>
+                      <li class="breadcrumb-item"><a href="/formsupplier">Masukan</a></li>
+                      <li class="breadcrumb-item active"><a href="/update_supplier">Update</a></li>
+                      <li class="breadcrumb-item active"><a href="/hapussupplier">Hapus</a></li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form role="form" action="{{ url_for('hapussupplier') }}" method="POST">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="Nama">Nama</label>
+                                        <input type="text" class="form-control" name="Nama" placeholder="Masukkan Nama">
+                                    </div>
+                    
+                                    <div class="form-group">
+                                        <label for="Alamat">Alamat</label>
+                                        <input type="text" class="form-control" name="Alamat" placeholder="Masukkan Alamat">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="Kode_Pos">Kode Pos</label>
+                                        <input type="text" class="form-control" name="Kode_Pos" placeholder="Masukkan Kode Pos">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Hapus Data</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% include 'footer.html' %}

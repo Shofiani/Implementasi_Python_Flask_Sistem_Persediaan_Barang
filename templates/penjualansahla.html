@@ -1,0 +1,71 @@
+{% include 'header.html' %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Data Penjualan Sahla</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item active"><a href="/penjualansahla">Data</a></li>
+            <li class="breadcrumb-item"><a href="/formpenjualansahla">Masukan</a></li>
+            <li class="breadcrumb-item active"><a href="/update_penjualansahla">Update</a></li>
+            <li class="breadcrumb-item active"><a href="/hapuspenjualansahla">Hapus</a></li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  
+ <!-- Main content -->
+ <section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr style="background-color: #FA9884;">
+                  <th style="width: 10px">No</th>
+                  <th>Tanggal</th>
+                  <th>Nama Pelanggan</th>
+                  <th>Nama Produk</th>
+                  <th>Jenis Produk</th>
+                  <th>Jumlah Produk</th>
+                  <th>Total Harga</th>
+                  <th>Bukti Pembayaran</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Isi data penjualan di sini -->
+                <!-- Misalnya, Anda dapat menggunakan looping untuk menampilkan data dari database -->
+                {% for penjualan in data %}
+                <tr>
+                  <td>{{ loop.index }}</td>
+                  <td>{{ penjualan[0] }}</td>
+                  <td>{{ penjualan[1] }}</td>
+                  <td>{{ penjualan[2] }}</td>
+                  <td>{{ penjualan[3] }}</td>
+                  <td>{{ penjualan[4] }}</td>
+                  <td>{{ penjualan[5] }}</td>
+                  <td><img src="{{ url_for('static', filename='uploads/' + penjualan[6]) }}" alt="Bukti Pembayaran" style="max-width: 100px;"></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% include 'footer.html' %}

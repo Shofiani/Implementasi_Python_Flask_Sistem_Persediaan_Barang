@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/loginstyle.css') }}">
+   
+
+    <title>Form Login</title>
+  </head>
+  <body>
+
+    <div class="right">
+        <div class="image-text">WELCOME KHAZZANAH X SAHLA SYARI</div>
+        <img src="static\dist\img\gambar.jpg" alt="Gambar" width="50"> 
+    </div>
+    <!-- start Form Registrasi -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 text-center mt-3 mb-3">
+                <h1><b>Sign in</b></h1>
+                <!-- pesan flash -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    <!-- alert -->
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        <strong>{{ message }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>                    
+                    {% endfor %}                   
+                {% endif %}
+                {% endwith %}
+            </div>            
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <form action="{{ url_for('login') }}" method="post">                    
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><i class="fas fa-user"></i>  Username</label>
+                        <input type="email" class="form-control" id="email" placeholder="Masukkan email" name="email" autocomplete="off" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label"><i class="fas fa-lock "></i>  Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Masukkan password" name="password" autocomplete="off" required>
+                    </div>   
+                      
+                    
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <div class="text-start">Belum Punya Akun? Klik <a href="{{ url_for('registrasi') }}">Registrasi</a></div>
+                </form>
+            </div>            
+        </div>
+    </div>
+    
+
+   
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+  </body>
+</html>

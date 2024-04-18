@@ -1,0 +1,68 @@
+{% include 'header.html' %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Data Perlengkapan</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item active"><a href="/masterperlengkapan">Data</a></li>
+            <li class="breadcrumb-item"><a href="/formperlengkapan">Masukan</a></li>
+            <li class="breadcrumb-item active"><a href="/hapusperlengkapan">Hapus</a></li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  
+<!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr style="background-color: #FA9884;">
+                      <th style="width: 10px">No</th>
+                        <th>Tanggal</th>
+                        <th>Nama Barang</th>
+                        <th>Satuan</th>
+                        <th>Jumlah Awal</th>
+                        <th>Barang Masuk</th>
+                        <th>Barang Keluar</th>
+                        <th>Jumlah Akhir</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for perlengkapan in data %}
+                    <tr>
+                      <td>{{ loop.index }}</td>
+                      <td>{{ perlengkapan[0] }}</td>
+                      <td>{{ perlengkapan[1] }}</td>
+                      <td>{{ perlengkapan[2] }}</td>
+                      <td>{{ perlengkapan[3] }}</td>
+                      <td>{{ perlengkapan[4] }}</td>
+                      <td>{{ perlengkapan[5] }}</td>
+                      <td>{{ perlengkapan[6] }}</td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>    
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  {% include 'footer.html' %}

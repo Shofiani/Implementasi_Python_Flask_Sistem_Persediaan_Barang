@@ -1,0 +1,96 @@
+/* Reset gaya default untuk elemen HTML */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family:Verdana, 'Geneva', Tahoma, sans-serif sans-serif;
+    background-color: rgb(243,230,221);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+ 
+  /* Container styling */
+  /* Container styling */
+.container {
+  background-color: rgb(195,158,139);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 2000px;
+  height: 730px;
+  margin-left: auto;
+  margin-right: 20;
+}
+
+
+  /* Form styling */
+  form {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  /* Heading styling */
+  h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    width: 150%;
+    margin-left: 5px; 
+  }
+  
+  /* Input styling */
+  .form-control {
+    margin-bottom: 15px;
+    font-size: 20px;
+    width: 150%;
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    margin-bottom: 15px;
+    width: 150%;
+    font-size: 20px;
+  }
+  
+  /* Text styling */
+  .text-start {
+    margin-top: 20px;
+    font-size: 20px;
+    width: 150%;
+  }
+  
+  /* Alert styling */
+  .alert {
+    margin-bottom: 20px;
+  }
+
+  /* Gambar styling */
+.right img {
+  float: left; 
+  width: 70%;
+  height: 100%;
+  margin-left: 100px; 
+  margin-top: 50px;
+}
+
+.image-text {
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  font-family: "Architects Daughter", cursive;;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: underline;
+  margin-left: 60px; 
+  margin-top: 30px;
+}
+
+
+  
+

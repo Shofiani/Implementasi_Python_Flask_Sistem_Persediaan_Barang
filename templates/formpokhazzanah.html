@@ -1,0 +1,85 @@
+{% include 'header.html' %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Form Orderan Masuk Khazzanah</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item active"><a href="/pokhazzanah">Data</a></li>
+              <li class="breadcrumb-item"><a href="/formpokhazzanah">Masukan</a></li>
+              <li class="breadcrumb-item active"><a href="/update_pokhazzanah">Update</a></li>
+              <li class="breadcrumb-item active"><a href="/hapuspokhazzanah">Hapus</a></li>
+            </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  
+<!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+
+           <!-- general form elements -->
+           <div class="card">
+            <!-- form start -->
+            <form role="form" action="{{ url_for('simpanformpokhazzanah') }}" method="POST">
+                <div class="card-body">
+                <div class="form-group">
+                    <label for="Tanggal">Tanggal</label>
+                    <input type="date" class="form-control" name="Tanggal" placeholder="Masukkan tanggal">
+                </div>
+
+                <div class="form-group">
+                    <label for="Nama_Pelanggan">Nama Pelanggan</label>
+                    <input type="text" class="form-control" name="Nama_Pelanggan" placeholder="Nama Pelanggan">
+                </div>
+
+                <div class="form-group">
+                    <label for="Nama_Produk">Nama Produk</label>
+                    <input type="text" class="form-control" name="Nama_Produk" placeholder="Nama Produk">
+                </div>
+
+                <div class="form-group">
+                    <label for="Warna">Warna</label>
+                    <input type="text" class="form-control" name="Warna" placeholder="Warna">
+                </div>
+
+                <div class="form-group">
+                  <label for="Size">Size</label>
+                  <input type="text" class="form-control" name="Size" placeholder="Size">
+                </div>
+
+              <div class="form-group">
+                <label for="Request_Order">Request Order</label>
+                <input type="text" class="form-control" name="Request_Order" placeholder="Request Order">
+              </div>
+
+              <div class="form-group">
+                <label for="Urgent">Urgent</label>
+                <input type="text" class="form-control" name="Urgent" placeholder="Urgent">
+              </div>
+                
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+            </form>
+          </div>
+         
+        </div>   
+        </div>    
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  {% include 'footer.html' %}
